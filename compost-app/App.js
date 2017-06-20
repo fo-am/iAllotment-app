@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import { Font, AppLoading } from 'expo'
+import { StyleSheet, Text, View, ScrollView, Image, Button } from 'react-native';
+import { Font, AppLoading, WebBrowser } from 'expo'
 
 
 export default class App extends Component {
@@ -20,23 +20,28 @@ export default class App extends Component {
       <ScrollView style={styles.background}>
 
         <Text style={styles.header}>
-          <Text>
-            The Allotment Lab
-          </Text>
-          <Text>
-            Prototype
-          </Text>
-          </Text>
-         <Text style={styles.normal}>This is a prototype designed to
+          <Text>{'The Allotment Lab\nPrototype'}</Text>
+        
+        </Text>
+        <Text style={styles.normal}>This is a prototype designed to
             demonstrate ideas for the Allotment Lab</Text>
-         <Text style={styles.normal}>Developed by FoAM Kernow on behalf
-            of the SWARM Knowledge Hub, a Rural Develpment Programme for England
-             (RDPE) initative managed by DuchyCollege Rural Business School, 
+        <Text style={styles.normal}>Developed by <Text style={styles.fakeLink}>FoAM Kernow</Text> on behalf
+            of the <Text style={styles.fakeLink}>SWARM Knowledge Hub</Text>, a Rural Develpment Programme for England
+             (RDPE) initative managed by <Text style={styles.fakeLink}>Duchy College Rural Business School</Text>,
              in partnership with Rothamsted Research North Wyke.</Text>
-   
-       </ScrollView>
+        <Image style={{ alignItems: 'center', }}
+          source={require('./assets/images/logo.png')}
+        />
+        <Button
+          onPress={this._onPressLearnMore}
+          title="Enter the Allotment Lab"
+          color='rgb(224, 190, 54)'
+          accessibilityLabel="Enter the Allotment Lab"
+        />
+      </ScrollView>
     );
   }
+  _onPressLearnMore() { }
 
   async _cacheResourcesAsync() {
     await Font.loadAsync({
@@ -51,15 +56,22 @@ const styles = StyleSheet.create({
   header: {
     textAlign: 'center',
     fontFamily: 'aria-madurai',
-    fontSize: 40,
+    fontSize: 30,
   },
   normal: {
     textAlign: 'center',
     fontFamily: 'aria-madurai',
-   fontSize: 20,
+    fontSize: 20,
+  },
+  fakeLink: {
+    textDecorationLine: 'underline',
+    color: 'rgb(0, 170, 0)',
+    textAlign: 'center',
+    fontFamily: 'aria-madurai',
+    fontSize: 20,
   },
   background: {
-    
+
     backgroundColor: 'rgb(243, 247, 235)',
   }
 });
