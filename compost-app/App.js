@@ -1,31 +1,48 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { Font, AppLoading } from 'expo'
 
 
 export default class App extends Component {
   state = {
-    fontLoaded: false,
+    isReady: false,
   };
-async componentDidMount() {
+
+  componentWillMount() {
+    this._cacheResourcesAsync();
+  }
+
+  render() {
+    if (!this.state.isReady) {
+      return <AppLoading />;
+    }
+    return (
+      <ScrollView>
+
+        <Text style={styles.header}>
+          <Text>
+            The Allotment Lab
+          </Text>
+          <Text>
+            Prototype
+          </Text>
+        </Text>
+      </ScrollView>
+    );
+  }
+
+  async _cacheResourcesAsync() {
     await Font.loadAsync({
       'aria-madurai': require('./assets/fonts/ArimaMadurai-Regular.ttf'),
     });
 
-    this.setState({ fontLoaded: true });
-  }
-render() {
-    return (
-<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-  {
-    this.state.fontLoaded ? (
-      <Text style={{ fontFamily: 'aria-madurai', fontSize: 56 }}>
-      Hello, world!
-      </Text>
-    ) : null
-  }
-</View>
-    );
+    this.setState({ isReady: true });
   }
 }
 
+const styles = StyleSheet.create({
+  header: {
+    fontFamily: 'aria-madurai',
+    fontSize: 50,
+  },
+});
