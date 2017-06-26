@@ -1,14 +1,7 @@
-import React, { Component } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  Image,
-  Button
-} from "react-native";
-import { Font, AppLoading, WebBrowser } from "expo";
-import { Actions } from "react-native-router-flux";
+import React, {Component} from "react";
+import {StyleSheet, Text, View, ScrollView, Image, Button} from "react-native";
+import {Font, AppLoading, WebBrowser} from "expo";
+import {Actions} from "react-native-router-flux";
 
 export default class Splash extends Component {
   state = {
@@ -24,7 +17,6 @@ export default class Splash extends Component {
     }
     return (
       <ScrollView style={styles.background}>
-
         <Text style={styles.header}>
           <Text>{"The Allotment Lab\nPrototype"}</Text>
         </Text>
@@ -43,7 +35,7 @@ export default class Splash extends Component {
             Duchy College Rural Business School
           </Text>, in partnership with Rothamsted Research North Wyke.
         </Text>
-        <View style={{ alignItems: "center" }}>
+        <View style={{alignItems: "center"}}>
           <Image source={require("./assets/images/logo.png")} />
         </View>
         <Button
@@ -57,7 +49,7 @@ export default class Splash extends Component {
           for guidance purposes only and is not intended to amount to
           professional advice or opinion. FoAM Kernow, Duchy College,
           and Rothamstead Reasearch North Wyke cannot be held responsible
-          for any losses or damage resultiong from the use of information
+          for any losses or damage resulting from the use of information
           provided by this app.
         </Text>
       </ScrollView>
@@ -69,7 +61,7 @@ export default class Splash extends Component {
       "aria-madurai": require("./assets/fonts/ArimaMadurai-Regular.ttf")
     });
 
-    this.setState({ isReady: true });
+    this.setState({isReady: true});
   }
 }
 
@@ -92,6 +84,7 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
   background: {
+    paddingTop: 40,
     backgroundColor: "rgb(243, 247, 235)"
   }
 });
