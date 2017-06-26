@@ -8,7 +8,7 @@ export default class App extends Component {
   render() {
     return (
       <Router>
-        <Scene key="root">
+        <Scene key="root"> 
           <Scene key="splash" component={Splash} initial={true} />
           <Scene key="main" component={Main} title="PageTwo" />
         </Scene>
