@@ -25,12 +25,12 @@ export default class Splash extends Component {
           demonstrate ideas for the Allotment Lab
         </Text>
         <Text style={styles.normal}>
-          Developed by
+          Developed by{" "}
           <Text style={styles.fakeLink}>FoAM Kernow</Text>
-          on behalf of the
+          on behalf of the{" "}
           <Text style={styles.fakeLink}>SWARM Knowledge Hub</Text>
           , a Rural Develpment Programme for England
-          (RDPE) initative managed by
+          (RDPE) initative managed by{" "}
           <Text style={styles.fakeLink}>
             Duchy College Rural Business School
           </Text>, in partnership with Rothamsted Research North Wyke.
@@ -45,10 +45,10 @@ export default class Splash extends Component {
           accessibilityLabel="Enter the Allotment Lab"
         />
         <Text style={styles.normal}>
-          The Allotment Lab offers informaion
+          The Allotment Lab offers information
           for guidance purposes only and is not intended to amount to
           professional advice or opinion. FoAM Kernow, Duchy College,
-          and Rothamstead Reasearch North Wyke cannot be held responsible
+          and Rothamstead Research North Wyke cannot be held responsible
           for any losses or damage resulting from the use of information
           provided by this app.
         </Text>
