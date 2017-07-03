@@ -11,6 +11,8 @@ import {
 import resolveAssetSource from "resolveAssetSource";
 import {Actions} from "react-native-router-flux";
 
+var styles = require("./Styles.js");
+
 export default class Main extends Component {
   measureView(event) {
     this.setState({
@@ -83,25 +85,3 @@ export default class Main extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  image: {
-    alignSelf: "stretch",
-    alignItems: "flex-start"
-  },
-  header: {
-    textAlign: "center",
-    fontFamily: "aria-madurai",
-    fontSize: 30
-  },
-  background: {
-    paddingTop: 40,
-    backgroundColor: "rgb(243, 247, 235)"
-  },
-  row: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "flex-start"
-  }
-});

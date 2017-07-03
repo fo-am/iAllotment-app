@@ -3,6 +3,8 @@ import {StyleSheet, Text, View, ScrollView, Image, Button} from "react-native";
 import {Font, AppLoading, WebBrowser} from "expo";
 import {Actions} from "react-native-router-flux";
 
+var styles = require("./Styles.js");
+
 export default class SoilTexture extends Component {
   render() {
     return (
@@ -19,27 +21,3 @@ export default class SoilTexture extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  header: {
-    textAlign: "center",
-    fontFamily: "aria-madurai",
-    fontSize: 30
-  },
-  normal: {
-    textAlign: "center",
-    fontFamily: "aria-madurai",
-    fontSize: 20
-  },
-  fakeLink: {
-    textDecorationLine: "underline",
-    color: "rgb(0, 170, 0)",
-    textAlign: "center",
-    fontFamily: "aria-madurai",
-    fontSize: 20
-  },
-  background: {
-    paddingTop: 40,
-    backgroundColor: "rgb(243, 247, 235)"
-  }
-});
