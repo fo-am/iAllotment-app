@@ -10,8 +10,7 @@ import {
 } from "react-native";
 import resolveAssetSource from "resolveAssetSource";
 import {Actions} from "react-native-router-flux";
-
-var styles = require("./Styles.js");
+import styles from "./Styles";
 
 export default class Main extends Component {
   measureView(event) {

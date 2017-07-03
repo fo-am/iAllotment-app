@@ -2,8 +2,7 @@ import React, {Component} from "react";
 import {StyleSheet, Text, View, ScrollView, Image, Button} from "react-native";
 import {Font, AppLoading, WebBrowser} from "expo";
 import {Actions} from "react-native-router-flux";
-
-var styles = require("./Styles.js");
+import styles from "./Styles";
 
 export default class Splash extends Component {
   state = {
