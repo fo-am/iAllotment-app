@@ -40,11 +40,45 @@ export default class Main extends Component {
           resizeMode="contain"
           source={require("./assets/images/map.png")}
         />
+        <View>
+          <View style={styles.row}>
+            <View>
+              <Text>Soil Texture</Text>
+              <Button
+                onPress={Actions.soilTexture}
+                title="Find soil texture"
+                color="rgb(224, 190, 54)"
+              />
+            </View>
+            <View>
+              <Text>Soil pH</Text>
+              <Button
+                onPress={Actions.main}
+                title="Slightly acid"
+                color="rgb(224, 190, 54)"
+              />
+            </View>
+          </View>
+          <View style={styles.row}>
+            <View>
+              <Text>Choose Units</Text>
+              <Button
+                onPress={Actions.main}
+                title="Metric"
+                color="rgb(224, 190, 54)"
+              />
+            </View>
+            <View>
+              <Text>Rainfall</Text>
+              <Button
+                onPress={Actions.main}
+                title="Low"
+                color="rgb(224, 190, 54)"
+              />
+            </View>
+          </View>
 
-        <Text>
-          {" "}
-          Here is some exciting content about mud.
-        </Text>
+        </View>
       </ScrollView>
     );
   }
@@ -52,7 +86,8 @@ export default class Main extends Component {
 
 const styles = StyleSheet.create({
   image: {
-    alignSelf: "stretch"
+    alignSelf: "stretch",
+    alignItems: "flex-start"
   },
   header: {
     textAlign: "center",
@@ -62,5 +97,11 @@ const styles = StyleSheet.create({
   background: {
     paddingTop: 40,
     backgroundColor: "rgb(243, 247, 235)"
+  },
+  row: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "flex-start"
   }
 });

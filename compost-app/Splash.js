@@ -27,7 +27,7 @@ export default class Splash extends Component {
         <Text style={styles.normal}>
           Developed by{" "}
           <Text style={styles.fakeLink}>FoAM Kernow</Text>
-          {" "}on behalf of the{" "}
+          on behalf of the{" "}
           <Text style={styles.fakeLink}>SWARM Knowledge Hub</Text>
           , a Rural Develpment Programme for England
           (RDPE) initative managed by{" "}
