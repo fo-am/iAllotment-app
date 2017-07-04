@@ -13,7 +13,13 @@ import {Actions} from "react-native-router-flux";
 import styles from "./Styles";
 
 export default class Main extends Component {
-  measureView(event) {
+  constructor(props) {
+    super(props);
+    props.soilType
+      ? (this.state = {soilType: props.soilType})
+      : (this.state = {soilType: "lol type"});
+  }
+  _measureView(event) {
     this.setState({
       width: event.nativeEvent.layout.width,
       height: event.nativeEvent.layout.width
@@ -27,7 +33,7 @@ export default class Main extends Component {
     return (
       <ScrollView
         style={styles.background}
-        onLayout={event => this.measureView(event)}
+        onLayout={event => this._measureView(event)}
       >
         <Text style={styles.header}>
           Becky's allotment
@@ -47,7 +53,7 @@ export default class Main extends Component {
               <Text>Soil Texture</Text>
               <Button
                 onPress={Actions.soilTexture}
-                title="Find soil texture"
+                title={this.state.soilType}
                 color="rgb(224, 190, 54)"
               />
             </View>

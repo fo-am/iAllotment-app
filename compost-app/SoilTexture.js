@@ -8,14 +8,28 @@ import renderif from "./RenderIf";
 export default class SoilTexture extends Component {
   constructor(props) {
     super(props);
-    this.state = {page: "one"};
+    this.state = {page: "ball"};
   }
   render() {
     return (
       <View>
-        {renderif(this.state.page === "one")(
+        <Text style={styles.header}>
+          Soil texture lab
+        </Text><Text style={styles.normal}>
+          Follow this guide to find out your soil texture. This will make it easier to choose suitable plants.
+        </Text>
+        {renderif(this.state.page === "ball")(
           <ScrollView style={styles.background}>
-
+            <View style={{alignItems: "center"}}>
+              <Image
+                resizeMode="cover"
+                source={require("./assets/images/ball.png")}
+              >
+                <Text style={styles.normal}>
+                  Does the soil form a coherent ball?
+                </Text>
+              </Image>
+            </View>
             <Text style={styles.header}>
               <Text>{"Page one"}</Text>
             </Text>
@@ -37,8 +51,12 @@ export default class SoilTexture extends Component {
               This is page two
             </Text>
             <Button
-              title="This is a button to one"
+              title="return to one"
               onPress={() => this.setState({page: "one"})}
+            />
+            <Button
+              title="Your option is GOLD!"
+              onPress={() => Actions.main({soilType: "Gold", type: "reset"})}
             />
           </ScrollView>
         )}
