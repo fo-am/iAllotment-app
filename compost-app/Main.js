@@ -11,6 +11,7 @@ import {
 import resolveAssetSource from "resolveAssetSource";
 import {Actions} from "react-native-router-flux";
 import styles from "./Styles";
+import ImageScale from "./ImageScale";
 
 export default class Main extends Component {
   constructor(props) {
@@ -19,34 +20,15 @@ export default class Main extends Component {
       ? (this.state = {soilType: props.soilType})
       : (this.state = {soilType: "lol type"});
   }
-  _measureView(event) {
-    this.setState({
-      width: event.nativeEvent.layout.width,
-      height: event.nativeEvent.layout.width
-    });
-  }
-  componentWillMount() {
-    let source = resolveAssetSource(require("./assets/images/map.png"));
-    this.setState({ratio: source.height / source.width});
-  }
+
   render() {
     return (
-      <ScrollView
-        style={styles.background}
-        onLayout={event => this._measureView(event)}
-      >
+      <ScrollView style={styles.background}>
         <Text style={styles.header}>
           Becky's allotment
         </Text>
 
-        <Image
-          style={{
-            width: this.state.width,
-            height: this.state.height * this.state.ratio
-          }}
-          resizeMode="contain"
-          source={require("./assets/images/map.png")}
-        />
+        <ImageScale image={require("./assets/images/map.png")} />
         <View>
           <View style={styles.row}>
             <View>

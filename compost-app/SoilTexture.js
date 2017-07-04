@@ -4,6 +4,7 @@ import {Font, AppLoading, WebBrowser} from "expo";
 import {Actions} from "react-native-router-flux";
 import styles from "./Styles";
 import renderif from "./RenderIf";
+import ImageScale from "./ImageScale";
 
 export default class SoilTexture extends Component {
   constructor(props) {
@@ -21,14 +22,10 @@ export default class SoilTexture extends Component {
         {renderif(this.state.page === "ball")(
           <ScrollView style={styles.background}>
             <View style={{alignItems: "center"}}>
-              <Image
-                resizeMode="cover"
-                source={require("./assets/images/ball.png")}
-              >
-                <Text style={styles.normal}>
-                  Does the soil form a coherent ball?
-                </Text>
-              </Image>
+              <ImageScale
+                image={require("./assets/images/ball.png")}
+                text="Does the soil form a coherent ball?"
+              />
             </View>
             <Text style={styles.header}>
               <Text>{"Page one"}</Text>
