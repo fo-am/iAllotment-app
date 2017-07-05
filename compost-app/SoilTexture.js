@@ -13,18 +13,19 @@ export default class SoilTexture extends Component {
   }
   render() {
     return (
-      <View>
+      <ScrollView style={styles.background}>
         <Text style={styles.header}>
           Soil texture lab
         </Text><Text style={styles.normal}>
           Follow this guide to find out your soil texture. This will make it easier to choose suitable plants.
         </Text>
         {renderif(this.state.page === "ball")(
-          <ScrollView style={styles.background}>
+          <View>
             <View style={{alignItems: "center"}}>
               <ImageScale
                 image={require("./assets/images/ball.png")}
                 text="Does the soil form a coherent ball?"
+                textStyle={styles.normal}
               />
             </View>
             <Text style={styles.header}>
@@ -37,10 +38,10 @@ export default class SoilTexture extends Component {
               title="This is a button to two"
               onPress={() => this.setState({page: "two"})}
             />
-          </ScrollView>
+          </View>
         )}
         {renderif(this.state.page === "two")(
-          <ScrollView style={styles.background}>
+          <View>
             <Text style={styles.header}>
               <Text>{"Page two"}</Text>
             </Text>
@@ -55,9 +56,9 @@ export default class SoilTexture extends Component {
               title="Your option is GOLD!"
               onPress={() => Actions.main({soilType: "Gold", type: "reset"})}
             />
-          </ScrollView>
+          </View>
         )}
-      </View>
+      </ScrollView>
     );
   }
 }

@@ -17,7 +17,7 @@ export default class ImageScale extends React.Component {
           }}
           source={this.props.image}
         >
-          <Text>{this.props.text}</Text>
+          <Text style={this.props.textStyle}>{this.props.text}</Text>
         </Image>
       </View>
     );
