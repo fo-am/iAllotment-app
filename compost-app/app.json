@@ -1,5 +1,15 @@
 {
   "expo": {
-    "sdkVersion": "18.0.0"
+    "name": "Allotment Lab",
+    "icon": "./assets/images/icon.png",
+    "version": "0.1.0",
+    "slug": "your-app-slug",
+    "sdkVersion": "18.0.0",
+    "ios": {
+      "bundleIdentifier": "com.fo-am.allotmentlab"
+    },
+    "android": {
+      "package": "com.fo-am.allotmentlab"
+    }
   }
 }
