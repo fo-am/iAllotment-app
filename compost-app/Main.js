@@ -1,15 +1,15 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import {
   StyleSheet,
   Text,
   View,
   ScrollView,
   Image,
-  Button,
   Dimensions
 } from "react-native";
+import Button from "apsl-react-native-button";
 import resolveAssetSource from "resolveAssetSource";
-import {Actions} from "react-native-router-flux";
+import { Actions } from "react-native-router-flux";
 import styles from "./Styles";
 import ImageScale from "./ImageScale";
 
@@ -17,16 +17,14 @@ export default class Main extends Component {
   constructor(props) {
     super(props);
     props.soilType
-      ? (this.state = {soilType: props.soilType})
-      : (this.state = {soilType: "lol type"});
+      ? (this.state = { soilType: props.soilType })
+      : (this.state = { soilType: "Find soil texture" });
   }
 
   render() {
     return (
       <ScrollView style={styles.background}>
-        <Text style={styles.header}>
-          Becky's allotment
-        </Text>
+        <Text style={styles.header}>Becky's allotment</Text>
 
         <ImageScale image={require("./assets/images/map.png")} />
         <View>
@@ -34,39 +32,43 @@ export default class Main extends Component {
             <View>
               <Text>Soil Texture</Text>
               <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
                 onPress={Actions.soilTexture}
-                title={this.state.soilType}
-                color="rgb(224, 190, 54)"
-              />
+              >
+                {this.state.soilType}
+              </Button>
             </View>
             <View>
               <Text>Soil pH</Text>
               <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
                 onPress={Actions.main}
-                title="Slightly acid"
-                color="rgb(224, 190, 54)"
-              />
+              >
+                Slightly acid
+              </Button>
             </View>
           </View>
           <View style={styles.row}>
             <View>
               <Text>Choose Units</Text>
               <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
                 onPress={Actions.main}
-                title="Metric"
-                color="rgb(224, 190, 54)"
-              />
+              >
+                Metric
+              </Button>
             </View>
             <View>
               <Text>Rainfall</Text>
+
               <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
                 onPress={Actions.main}
-                title="Low"
-                color="rgb(224, 190, 54)"
-              />
+              >
+                Low
+              </Button>
             </View>
           </View>
-
         </View>
       </ScrollView>
     );
