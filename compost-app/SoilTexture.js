@@ -74,7 +74,7 @@ export default class SoilTexture extends Component {
               </View>
               <Button
                 style={{ backgroundColor: "rgb(224, 190, 54)" }}
-                onPress={() => this.setState({ page: "coherent" })}
+                onPress={() => this.setState({ page: "easily" })}
               >
                 Flattens coherently
               </Button>
@@ -86,9 +86,38 @@ export default class SoilTexture extends Component {
               </Button>
             </View>
           )}
-          {renderif(this.state.page === "easily")(
+          {renderif(this.state.page === "break")(
             <SoilTypeSet
-              soilType="Sand"
+              soilType="Sandy Loam"
+              restartPage={() => this.setState({ page: "ball" })}
+            />
+          )}
+          {renderif(this.state.page === "easily")(
+            <View>
+              <View style={{ alignItems: "center" }}>
+                <ImageScale
+                  image={require("./assets/images/cylinder.png")}
+                  text="On slight further moistening, can the ball be rolled into a cylinder 5mm thick?"
+                  textStyle={styles.normal}
+                />
+              </View>
+              <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
+                onPress={() => this.setState({ page: "bend" })}
+              >
+                Yes
+              </Button>
+              <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
+                onPress={() => this.setState({ page: "loamySand" })}
+              >
+                No
+              </Button>
+            </View>
+          )}
+          {renderif(this.state.page === "loamySand")(
+            <SoilTypeSet
+              soilType="Loamy Sand"
               restartPage={() => this.setState({ page: "ball" })}
             />
           )}

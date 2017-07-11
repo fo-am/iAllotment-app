@@ -8,7 +8,9 @@ export default class SoilTypeSet extends React.Component {
   render() {
     return (
       <View>
-        <Text style={styles.normal}>Your allotment soil is: Sand</Text>
+        <Text style={styles.normal}>
+          Your allotment soil is: {this.props.soilType}
+        </Text>
         <Button
           style={{ backgroundColor: "rgb(224, 190, 54)" }}
           onPress={() =>
