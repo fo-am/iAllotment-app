@@ -1,12 +1,6 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  Image,
-  Button
-} from "react-native";
+import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
+import Button from "apsl-react-native-button";
 import { Font, AppLoading, WebBrowser } from "expo";
 import { Actions } from "react-native-router-flux";
 import styles from "./Styles";
@@ -44,20 +38,23 @@ export default class SoilTexture extends Component {
                 />
               </View>
               <Button
-                color="rgb(224, 190, 54)"
-                title="Easily"
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
                 onPress={() => this.setState({ page: "easily" })}
-              />
+              >
+                Easily
+              </Button>
               <Button
-                color="rgb(224, 190, 54)"
-                title="With great care"
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
                 onPress={() => this.setState({ page: "withGreatCare" })}
-              />
+              >
+                With great care
+              </Button>
               <Button
-                color="rgb(224, 190, 54)"
-                title="No"
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
                 onPress={() => this.setState({ page: "sand" })}
-              />
+              >
+                No
+              </Button>
             </View>
           )}
           {renderif(this.state.page === "sand")(
@@ -76,15 +73,17 @@ export default class SoilTexture extends Component {
                 />
               </View>
               <Button
-                color="rgb(224, 190, 54)"
-                title="Flattens coherently"
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
                 onPress={() => this.setState({ page: "coherent" })}
-              />
+              >
+                Flattens coherently
+              </Button>
               <Button
-                color="rgb(224, 190, 54)"
-                title="Breaks up"
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
                 onPress={() => this.setState({ page: "break" })}
-              />
+              >
+                Breaks up
+              </Button>
             </View>
           )}
           {renderif(this.state.page === "easily")(
