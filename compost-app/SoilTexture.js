@@ -121,6 +121,198 @@ export default class SoilTexture extends Component {
               restartPage={() => this.setState({ page: "ball" })}
             />
           )}
+          {renderif(this.state.page === "bend")(
+            <View>
+              <View style={{ alignItems: "center" }}>
+                <ImageScale
+                  image={require("./assets/images/horseshoe.png")}
+                  text="Can the cylinder be bent into a horseshoe without cracking?"
+                  textStyle={styles.normal}
+                />
+              </View>
+              <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
+                onPress={() => this.setState({ page: "ring" })}
+              >
+                Yes
+              </Button>
+              <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
+                onPress={() => this.setState({ page: "feelWet" })}
+              >
+                No
+              </Button>
+            </View>
+          )}
+          {renderif(this.state.page === "feelWet")(
+            <View>
+              <View style={{ alignItems: "center" }}>
+                <ImageScale
+                  image={require("./assets/images/smoothOrRough.png")}
+                  text="On remodelling with further moisture, what is the general feel of the soil?"
+                  textStyle={styles.normal}
+                />
+              </View>
+              <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
+                onPress={() => this.setState({ page: "smooth" })}
+              >
+                Smooth and pasty
+              </Button>
+              <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
+                onPress={() => this.setState({ page: "rough" })}
+              >
+                Rough and abrasive
+              </Button>
+            </View>
+          )}
+          {renderif(this.state.page === "smooth")(
+            <SoilTypeSet
+              soilType="Silty Loam"
+              restartPage={() => this.setState({ page: "ball" })}
+            />
+          )}
+          {renderif(this.state.page === "rough")(
+            <SoilTypeSet
+              soilType="Sandy Silty Loam"
+              restartPage={() => this.setState({ page: "ball" })}
+            />
+          )}
+          {renderif(this.state.page === "ring")(
+            <View>
+              <View style={{ alignItems: "center" }}>
+                <ImageScale
+                  image={require("./assets/images/ring.png")}
+                  text="Can a ring be formed by joining the two ends of the cylinder, without it cracking?"
+                  textStyle={styles.normal}
+                />
+              </View>
+              <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
+                onPress={() => this.setState({ page: "polish" })}
+              >
+                Yes
+              </Button>
+              <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
+                onPress={() => this.setState({ page: "remodel" })}
+              >
+                No
+              </Button>
+            </View>
+          )}
+          {renderif(this.state.page === "remodel")(
+            <View>
+              <View style={{ alignItems: "center" }}>
+                <ImageScale
+                  image={require("./assets/images/feel.png")}
+                  text="On remodelling with further water, what is the general feel of the soil?"
+                  textStyle={styles.normal}
+                />
+              </View>
+              <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
+                onPress={() => this.setState({ page: "gritty" })}
+              >
+                Very Gritty
+              </Button>
+              <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
+                onPress={() => this.setState({ page: "moderateRough" })}
+              >
+                Moderately rough
+              </Button>
+              <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
+                onPress={() => this.setState({ page: "doughy" })}
+              >
+                Doughy
+              </Button>
+            </View>
+          )}
+          {renderif(this.state.page === "gritty")(
+            <SoilTypeSet
+              soilType="Sandy clay loam"
+              restartPage={() => this.setState({ page: "ball" })}
+            />
+          )}
+          {renderif(this.state.page === "moderateRough")(
+            <SoilTypeSet
+              soilType="Clay loam"
+              restartPage={() => this.setState({ page: "ball" })}
+            />
+          )}
+          {renderif(this.state.page === "doughy")(
+            <SoilTypeSet
+              soilType="Silty clay loam"
+              restartPage={() => this.setState({ page: "ball" })}
+            />
+          )}
+          {renderif(this.state.page === "polish")(
+            <View>
+              <View style={{ alignItems: "center" }}>
+                <ImageScale
+                  image={require("./assets/images/polish.png")}
+                  text="On remodelling without further wetting, can the surface be polished with the thumb?"
+                  textStyle={styles.normal}
+                />
+              </View>
+              <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
+                onPress={() => this.setState({ page: "highPolish" })}
+              >
+                Yes, a high polish with few noticable particles
+              </Button>
+              <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
+                onPress={() => this.setState({ page: "gittyPolish" })}
+              >
+                yes, but gritty particles really noticable
+              </Button>
+            </View>
+          )}
+          {renderif(this.state.page === "gittyPolish")(
+            <SoilTypeSet
+              soilType="Sandy clay"
+              restartPage={() => this.setState({ page: "ball" })}
+            />
+          )}
+          {renderif(this.state.page === "highPolish")(
+            <View>
+              <View style={{ alignItems: "center" }}>
+                <ImageScale
+                  image={require("./assets/images/sticky.png")}
+                  text="On wetting thoroughly, how strongly does the soil stick your fingers together?"
+                  textStyle={styles.normal}
+                />
+              </View>
+              <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
+                onPress={() => this.setState({ page: "strongly" })}
+              >
+                Yes, a high polish with few noticable particles
+              </Button>
+              <Button
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
+                onPress={() => this.setState({ page: "moderatley" })}
+              >
+                yes, but gritty particles really noticable
+              </Button>
+            </View>
+          )}
+          {renderif(this.state.page === "strongly")(
+            <SoilTypeSet
+              soilType="Clay"
+              restartPage={() => this.setState({ page: "ball" })}
+            />
+          )}
+          {renderif(this.state.page === "moderatley")(
+            <SoilTypeSet
+              soilType="Silty clay"
+              restartPage={() => this.setState({ page: "ball" })}
+            />
+          )}
         </View>
       </ScrollView>
     );
