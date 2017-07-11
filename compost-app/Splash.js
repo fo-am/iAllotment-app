@@ -40,11 +40,8 @@ export default class Splash extends Component {
         <View style={{ alignItems: "center" }}>
           <Image source={require("./assets/images/logo.png")} />
         </View>
-        <Button
-          style={{ backgroundColor: "rgb(224, 190, 54)" }}
-          onPress={Actions.main}
-        >
-          Enter the Allotment Lab
+        <Button style={styles.button} onPress={Actions.main}>
+          <Text style={styles.normal}>Enter the Allotment Lab</Text>
         </Button>
         <Text style={styles.normal}>
           The Allotment Lab offers information for guidance purposes only and is

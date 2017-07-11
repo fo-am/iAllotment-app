@@ -1,6 +1,6 @@
 var React = require("react-native");
 
-import {StyleSheet} from "react-native";
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   header: {
@@ -33,6 +33,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "flex-start"
+  },
+  button: {
+    backgroundColor: "rgb(224, 190, 54)"
   }
 });
 

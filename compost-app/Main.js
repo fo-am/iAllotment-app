@@ -30,42 +30,47 @@ export default class Main extends Component {
         <View>
           <View style={styles.row}>
             <View>
-              <Text>Soil Texture</Text>
+              <Text style={styles.normal}>Soil Texture</Text>
               <Button
                 style={{ backgroundColor: "rgb(224, 190, 54)" }}
                 onPress={Actions.soilTexture}
               >
-                {this.state.soilType}
+                <Text style={styles.normal}>
+                  {this.state.soilType}
+                </Text>
               </Button>
             </View>
             <View>
-              <Text>Soil pH</Text>
+              <Text style={styles.normal}>Soil pH</Text>
               <Button
-                style={{ backgroundColor: "rgb(224, 190, 54)" }}
+                style={styles.button}
                 onPress={Actions.main}
+                isDisabled={true}
               >
-                Slightly acid
+                <Text style={styles.normal}>Slightly acid</Text>
               </Button>
             </View>
           </View>
           <View style={styles.row}>
             <View>
-              <Text>Choose Units</Text>
+              <Text style={styles.normal}>Choose Units</Text>
               <Button
                 style={{ backgroundColor: "rgb(224, 190, 54)" }}
                 onPress={Actions.main}
+                isDisabled={true}
               >
-                Metric
+                <Text style={styles.normal}>Metric</Text>
               </Button>
             </View>
             <View>
-              <Text>Rainfall</Text>
+              <Text style={styles.normal}>Rainfall</Text>
 
               <Button
                 style={{ backgroundColor: "rgb(224, 190, 54)" }}
                 onPress={Actions.main}
+                isDisabled={true}
               >
-                Low
+                <Text style={styles.normal}>Low</Text>
               </Button>
             </View>
           </View>
