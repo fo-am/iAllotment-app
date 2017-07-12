@@ -16,6 +16,7 @@ export default class App extends Component {
             key="soilTexture"
             component={SoilTexture}
             title="Soil Texture"
+            hideNavBar={false}
           />
         </Scene>
       </Router>

@@ -16,16 +16,14 @@ import ImageScale from "./ImageScale";
 export default class Main extends Component {
   constructor(props) {
     super(props);
-    props.soilType
-      ? (this.state = { soilType: props.soilType })
+    this.props.soilType
+      ? (this.state = { soilType: this.props.soilType })
       : (this.state = { soilType: "Find soil texture" });
   }
-
   render() {
     return (
       <ScrollView style={styles.background}>
         <Text style={styles.header}>Becky's allotment</Text>
-
         <ImageScale image={require("./assets/images/map.png")} />
         <View>
           <View style={styles.row}>
