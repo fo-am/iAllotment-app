@@ -4,6 +4,8 @@
 
 We are creating an iPhone version of the "Allotment Lab" application. Currently there is only an<a href="https://play.google.com/store/apps/details?id=foam.allotmentlab&hl=en" target="_blank"> Android version</a>. 
 
+Source code of the app and docker things discussed here can be found on <a href="https://github.com/fo-am/iAllotment-app" target="_blank">GitHub</a>.
+
 In order to remain close to the zeitgeist of doing EVERYTHING with JavaScript I decided to develop using '<a href="https://facebook.github.io/react-native/docs/getting-started.html" target="_blank">react native</a>'.
 
  You can make a new app with these few statements:
@@ -69,7 +71,7 @@ services:
 ```
 The "build" line under "agent" knows to look for a file called `Dockerfile` and this downloads the agent image and makes our additions to it. Then both containers are started and linked together. Though it does not always seem to work so you need to run `docker build .` to force it if it ain't working. (the full stop is important!)
 
-or you could try `docker-compose up -d --no-deps --build agent` if you have made a change to the agent dockerfile.
+or you could try<a href="http://staxmanade.com/2016/09/how-to-update-a-single-running-docker-compose-container/" target="_blank"> `docker-compose up -d --no-deps --build agent`</a> if you have made a change to the agent dockerfile.
 
 With both files in the same directory run 
 
@@ -78,7 +80,7 @@ With both files in the same directory run
 which will look for a file called `docker-compose.yml` and start the service. you can then navigate to "http://localhost:8111/" and TeamCity will be running.
 
 ### When things go wrong!
-to stop all running docker things use the magic 
+to stop all running docker things use <a href="http://blog.baudson.de/blog/stop-and-remove-all-docker-containers-and-images" target="_blank">this magic</a> 
 `docker stop $(docker ps -aq)`
 
 to remove them
@@ -87,6 +89,8 @@ to remove them
 
 ## What to do with TeamCity
 I don't currently have scripts to control TeamCity. So an admin user must be created and the agent be authorised to run our builds.
+will this help?https://confluence.jetbrains.com/display/TCD10/Super+User
+there is an api https://confluence.jetbrains.com/display/TCD10/REST+API
 
 ## creating the build steps
 
