@@ -67,7 +67,9 @@ services:
     environment:
       - SERVER_URL=server:8111
 ```
-The "build" line under "agent" knows to look for a file called `Dockerfile` and this downloads the agent image and makes our additions to it. Then both containers are started and linked together.
+The "build" line under "agent" knows to look for a file called `Dockerfile` and this downloads the agent image and makes our additions to it. Then both containers are started and linked together. Though it does not always seem to work so you need to run `docker build .` to force it if it ain't working. (the full stop is important!)
+
+or you could try `docker-compose up -d --no-deps --build agent` if you have made a change to the agent dockerfile.
 
 With both files in the same directory run 
 
@@ -89,6 +91,7 @@ I don't currently have scripts to control TeamCity. So an admin user must be cre
 ## creating the build steps
 
 ## check out from github whenever there is a commit.
+but only in the code folder! ignore other things.
 
 ## run the exp export commands
 
