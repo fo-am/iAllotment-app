@@ -11,6 +11,8 @@ services:
     environment:
       - TEAMCITY_SERVER_MEM_OPTS="-Xmx750m"
   agent:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile-agent
     environment:
       - SERVER_URL=server:8111
