@@ -37,7 +37,7 @@ We need to create a Dockerfile that will add the required Expo command line tool
 
 All code is available on <a href="https://github.com/fo-am/iAllotment-app" target="_blank">GitHub</a>.
 
-First the Dockerfile to customise the agent.
+First the Dockerfile to customise the agent. 
 
 ```dockerfile
 FROM 'jetbrains/teamcity-minimal-agent'
@@ -79,6 +79,10 @@ With both files in the same directory run
 
 which will look for a file called `docker-compose.yml` and start the service. you can then navigate to "http://localhost:8111/" and TeamCity will be running.
 
+
+https://blog.agchapman.com/setting-up-a-teamcity-build-environment-using-docker/
+
+
 If you are feeling fancy and want more agents you can simply do `docker-compose scale agent=3` and three agents will be available.
 
 note: the agents can take a minute or two to appear as they have to start up and register with the server.
@@ -99,9 +103,36 @@ there is an api https://confluence.jetbrains.com/display/TCD10/REST+API
 ## creating the build steps
 
 ## check out from github whenever there is a commit.
-but only in the code folder! ignore other things.
+There is a wizard for this which gets what you need.
+
+In build project "Edit checkout rules(0)" add the lines
+
+```
+-:.
++:compost-app
+```
+This means only the compost-app folder will be checked out. reducing bandwith usage.
+
+Triggers add `+:compost-app/**` trigger. (you need hit edit->advanced options ). This means only changes in the compost app folder will trigger a build.
+
+parameters: add `Expo Password` and `Expo Username` configuration parameters
+
 
 ## run the exp export commands
+
+create a command line build step.
+
+current commands are this which is working up to the detach but won't do it on a pc... needs a mac. sudden doupt about if this will work at all!
+
+```dos
+cd compost-app
+npm install
+exp login -u %Expo Username% -p "%Expo Password%"
+exp detach
+cd ios
+ls
+```
+
 
 ## navigate to the ios folder
 
