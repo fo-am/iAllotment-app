@@ -79,6 +79,10 @@ With both files in the same directory run
 
 which will look for a file called `docker-compose.yml` and start the service. you can then navigate to "http://localhost:8111/" and TeamCity will be running.
 
+If you are feeling fancy and want more agents you can simply do `docker-compose scale agent=3` and three agents will be available.
+
+note: the agents can take a minute or two to appear as they have to start up and register with the server.
+
 ### When things go wrong!
 to stop all running docker things use <a href="http://blog.baudson.de/blog/stop-and-remove-all-docker-containers-and-images" target="_blank">this magic</a> 
 `docker stop $(docker ps -aq)`
