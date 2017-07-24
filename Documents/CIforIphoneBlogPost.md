@@ -95,6 +95,24 @@ to remove them
 
 `docker rm $(docker ps -aq)`
 
+## back in the real world!
+the docker based agents cannot be used to build ios things, the agent has to actualy run on the mac hardware.
+to do this go to administration -> install agent and download the zip file.
+unzip this somewhere and run `./mac.launchd.sh launch` to start the agent. this should appear in the agents list after a minute or two startup time.
+as we are now on a mac you will also need to update the `docker-compose.yml` file with paths that are mac friendly.
+
+In order to make a mac build work we need to install the correct software.
+
+node to allow us to use npm
+react etc to have the files to build
+Xcode to allow the build to happen
+CocoaPods to manage mac dependencys. dunno why this does not install with Xcode...
+do `sudo gem install cocoapods` if this does not work then you need to install Ruby as well...
+Then run `pod setup` in a console window and wait for 10 minutes or so
+
+All this allows us to run `pod install` before building the iphone app. A necessary step that gets dependencies for the final iphone build.
+
+
 ## What to do with TeamCity
 I don't currently have scripts to control TeamCity. So an admin user must be created and the agent be authorised to run our builds.
 will this help?https://confluence.jetbrains.com/display/TCD10/Super+User
