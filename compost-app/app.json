@@ -4,7 +4,7 @@
     "icon": "./assets/images/icon.png",
     "version": "0.1.1",
     "slug": "AllotmentLab",
-    "sdkVersion": "18.0.0",
+    "sdkVersion": "19.0.0",
     "ios": {
       "bundleIdentifier": "com.foam.allotmentlab",
       "supportsTablet": true
