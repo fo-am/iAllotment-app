@@ -2,14 +2,19 @@ version: '3'
 
 services:  
   server:
-    image: 'jetbrains/teamcity-server' # the official JetBrains image
+    build:
+      context: .
+      dockerfile: Dockerfile-server
     volumes:
-      - 'D:\Docker\teamcity\data:/data/teamcity_server/datadir'
-      - 'D:\Docker\teamcity\logs:/data/teamcity/logs'
+    - '/Users/foam/Desktop/teamcity/data:/data/teamcity_server/datadir'
+    - '/Users/foam/Desktop/teamcity/logs:/data/teamcity/logs'
+    #- 'D:\Docker\teamcity\data:/data/teamcity_server/datadir'
+    #- 'D:\Docker\teamcity\logs:/data/teamcity/logs'
     ports:
       - 8111:8111
     environment:
       - TEAMCITY_SERVER_MEM_OPTS="-Xmx750m"
+      
   agent:
     build:
       context: .
