@@ -1,4 +1,4 @@
-app_identifier "com.foam.alltomentlab" # The bundle identifier of your app
+app_identifier "com.foam.allotmentlab" # The bundle identifier of your app
 apple_id "aidan@fo.am" # Your Apple email address
 
 team_id "M44MLMDZCY" # Developer Portal Team ID
