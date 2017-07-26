@@ -7,7 +7,14 @@
     "sdkVersion": "19.0.0",
     "ios": {
       "bundleIdentifier": "com.foam.allotmentlab",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "isRemoteJSEnabled": false,
+      "infoPlist": {
+       "NSContactsUsageDescription": "Connect with your contacts.",
+       "NSPhotoLibraryUsageDescription": "Select media to upload from your device.",
+       "NSMicrophoneUsageDescription":"Allow microphone usage",
+       "NSCameraUsageDescription": "Select media to upload from your device."
+      }
     },
     "android": {
       "package": "com.foam.allotmentlab"

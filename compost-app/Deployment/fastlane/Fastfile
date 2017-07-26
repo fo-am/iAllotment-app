@@ -41,6 +41,7 @@ lane :beta do
       scheme: "allotmentlab",
       workspace: '../ios/allotmentlab.xcworkspace'
       )
+    pilot
   end
 
   desc "Deploy a new version to the App Store"
