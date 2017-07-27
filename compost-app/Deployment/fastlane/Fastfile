@@ -30,12 +30,19 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
 lane :beta do   
-     increment_build_number({
-      build_number: latest_testflight_build_number(
+
+buildNumber = latest_testflight_build_number(
         app_identifier: "com.foam.allotmentlab"
-      ) + 1,
+      ) + 1
+     increment_build_number({
+      build_number: buildNumber,
       xcodeproj: '../ios/allotmentlab.xcodeproj'
-    })
+    }) 
+    set_info_plist_value(
+      path: "../ios/allotmentlab/Supporting/Info.plist", 
+      key: "CFBundleVersion", 
+      value: buildNumber.to_s
+      )
     update_app_identifier(
       xcodeproj: '../ios/allotmentlab.xcodeproj',
       plist_path:'./allotmentlab/Supporting/Info.plist',
