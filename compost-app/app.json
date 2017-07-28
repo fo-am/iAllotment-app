@@ -12,7 +12,8 @@
        "NSContactsUsageDescription": "Connect with your contacts.",
        "NSPhotoLibraryUsageDescription": "Select media to upload from your device.",
        "NSMicrophoneUsageDescription":"Allow microphone usage",
-       "NSCameraUsageDescription": "Select media to upload from your device."
+       "NSCameraUsageDescription": "Select media to upload from your device.",
+       "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {

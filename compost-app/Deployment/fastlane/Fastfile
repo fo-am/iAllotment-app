@@ -29,9 +29,12 @@ platform :ios do
 
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
-lane :beta do   
-
-buildNumber = latest_testflight_build_number(
+lane :beta do 
+   sh "sed -i '' 's/com.getexponent.allotmentlab/com.foam.allotmentlab/g' '../../ios/allotmentlab.xcodeproj/project.pbxproj'"
+    cocoapods(
+      podfile:'../ios/'
+    )
+    buildNumber = latest_testflight_build_number(
         app_identifier: "com.foam.allotmentlab"
       ) + 1
      increment_build_number({
@@ -50,6 +53,7 @@ buildNumber = latest_testflight_build_number(
     )  
     cert
     sigh
+    pem
     gym( 
       scheme: "allotmentlab",
       workspace: '../ios/allotmentlab.xcworkspace'
