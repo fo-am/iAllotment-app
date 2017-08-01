@@ -152,14 +152,13 @@ ls
 ```
 
 
-## navigate to the ios folder
+## navigate to the ios folder 
+open in Xcode.
+set signing to manual
 
-## do a build (need to be on a mac)
-will this blog help? https://content.pivotal.io/blog/ios-continuous-deployment-with-teamcity-and-hockeyapp
 
-make sure the .ipa file is exported as a build artifact.
 
-## create a dependent build that will deploy the .ipa to apple (using pilot maybe?)
+use fastlane to build and deploy the ipa file to Apple
 
 
 
