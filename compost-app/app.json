@@ -4,7 +4,7 @@
     "name": "AllotmentLab",
     "icon": "./assets/images/icon.png",
     "version": "0.1.1",
-    "slug": "exp.host/@aidan/AllotmentLab",
+    "slug": "allotmentlab",
     "ios": {
       "bundleIdentifier": "com.foam.allotmentlab",
       "supportsTablet": true,
