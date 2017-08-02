@@ -1,28 +1,33 @@
 var React = require("react-native");
 
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 
 const styles = StyleSheet.create({
   header: {
     textAlign: "center",
-    fontFamily: "aria-madurai",
+    fontFamily: "ArimaMadurai-Regular",
     fontSize: 30
   },
   normal: {
     textAlign: "center",
-    fontFamily: "aria-madurai",
+    fontFamily: "ArimaMadurai-Regular",
     fontSize: 20
   },
   fakeLink: {
     textDecorationLine: "underline",
     color: "rgb(0, 170, 0)",
     textAlign: "center",
-    fontFamily: "aria-madurai",
+    fontFamily: "ArimaMadurai-Regular",
     fontSize: 20
   },
   background: {
     paddingTop: 40,
     backgroundColor: "rgb(243, 247, 235)"
+  },
+  backgroundWithNav: {
+    paddingTop: 40,
+    backgroundColor: "rgb(243, 247, 235)",
+    paddingTop: Platform.OS === "ios" ? 64 : 54
   },
   image: {
     alignSelf: "stretch",

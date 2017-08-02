@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
 import Button from "apsl-react-native-button";
-import { Font, AppLoading, WebBrowser } from "expo";
 import { Actions } from "react-native-router-flux";
 import styles from "./Styles";
 import renderif from "./RenderIf";
 import ImageScale from "./ImageScale";
-import SoilTypeSet from "./src/SoilTypeSet";
+import SoilTypeSet from "../src/SoilTypeSet";
 
 export default class SoilTexture extends Component {
   constructor(props) {
@@ -15,7 +14,7 @@ export default class SoilTexture extends Component {
   }
   render() {
     return (
-      <ScrollView style={styles.background}>
+      <ScrollView style={styles.backgroundWithNav}>
         <Text style={styles.header}>Soil texture lab</Text>
         <Text style={styles.normal}>
           Follow this guide to find out your soil texture. This will make it
@@ -32,7 +31,7 @@ export default class SoilTexture extends Component {
             <View>
               <View style={{ alignItems: "center" }}>
                 <ImageScale
-                  image={require("./assets/images/ball.png")}
+                  image={require("../assets/images/ball.png")}
                   text="Does the soil form a coherent ball?"
                   textStyle={styles.normal}
                 />
@@ -67,7 +66,7 @@ export default class SoilTexture extends Component {
             <View>
               <View style={{ alignItems: "center" }}>
                 <ImageScale
-                  image={require("./assets/images/flat.png")}
+                  image={require("../assets/images/flat.png")}
                   text="Does the soil form a coherent ball?"
                   textStyle={styles.normal}
                 />
@@ -96,7 +95,7 @@ export default class SoilTexture extends Component {
             <View>
               <View style={{ alignItems: "center" }}>
                 <ImageScale
-                  image={require("./assets/images/cylinder.png")}
+                  image={require("../assets/images/cylinder.png")}
                   text="On slight further moistening, can the ball be rolled into a cylinder 5mm thick?"
                   textStyle={styles.normal}
                 />
@@ -125,7 +124,7 @@ export default class SoilTexture extends Component {
             <View>
               <View style={{ alignItems: "center" }}>
                 <ImageScale
-                  image={require("./assets/images/horseshoe.png")}
+                  image={require("../assets/images/horseshoe.png")}
                   text="Can the cylinder be bent into a horseshoe without cracking?"
                   textStyle={styles.normal}
                 />
@@ -148,7 +147,7 @@ export default class SoilTexture extends Component {
             <View>
               <View style={{ alignItems: "center" }}>
                 <ImageScale
-                  image={require("./assets/images/smoothOrRough.png")}
+                  image={require("../assets/images/smoothOrRough.png")}
                   text="On remodelling with further moisture, what is the general feel of the soil?"
                   textStyle={styles.normal}
                 />
@@ -183,7 +182,7 @@ export default class SoilTexture extends Component {
             <View>
               <View style={{ alignItems: "center" }}>
                 <ImageScale
-                  image={require("./assets/images/ring.png")}
+                  image={require("../assets/images/ring.png")}
                   text="Can a ring be formed by joining the two ends of the cylinder, without it cracking?"
                   textStyle={styles.normal}
                 />
@@ -206,7 +205,7 @@ export default class SoilTexture extends Component {
             <View>
               <View style={{ alignItems: "center" }}>
                 <ImageScale
-                  image={require("./assets/images/feel.png")}
+                  image={require("../assets/images/feel.png")}
                   text="On remodelling with further water, what is the general feel of the soil?"
                   textStyle={styles.normal}
                 />
@@ -253,7 +252,7 @@ export default class SoilTexture extends Component {
             <View>
               <View style={{ alignItems: "center" }}>
                 <ImageScale
-                  image={require("./assets/images/polish.png")}
+                  image={require("../assets/images/polish.png")}
                   text="On remodelling without further wetting, can the surface be polished with the thumb?"
                   textStyle={styles.normal}
                 />
@@ -282,7 +281,7 @@ export default class SoilTexture extends Component {
             <View>
               <View style={{ alignItems: "center" }}>
                 <ImageScale
-                  image={require("./assets/images/sticky.png")}
+                  image={require("../assets/images/sticky.png")}
                   text="On wetting thoroughly, how strongly does the soil stick your fingers together?"
                   textStyle={styles.normal}
                 />

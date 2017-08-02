@@ -1,8 +1,7 @@
-import React, {Component} from "react";
-import {StyleSheet, Text, View, ScrollView, Image} from "react-native";
+import React, { Component } from "react";
+import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
 import Button from "apsl-react-native-button";
-import {Font, AppLoading, WebBrowser} from "expo";
-import {Actions} from "react-native-router-flux";
+import { Actions } from "react-native-router-flux";
 import styles from "./Styles";
 
 export default class Splash extends Component {
@@ -15,7 +14,7 @@ export default class Splash extends Component {
   }
   render() {
     if (!this.state.isReady) {
-      return <AppLoading />;
+      return;
     }
     return (
       <ScrollView style={styles.background}>
@@ -32,14 +31,13 @@ export default class Splash extends Component {
           Developed by <Text style={styles.fakeLink}>FoAM Kernow</Text>
           on behalf of the{" "}
           <Text style={styles.fakeLink}>SWARM Knowledge Hub</Text>
-          , a Rural Develpment Programme for England (RDPE) initative managed by
-          {" "}
+          , a Rural Develpment Programme for England (RDPE) initative managed by{" "}
           <Text style={styles.fakeLink}>
             Duchy College Rural Business School
           </Text>, in partnership with Rothamsted Research North Wyke.
         </Text>
-        <View style={{alignItems: "center"}}>
-          <Image source={require("./assets/images/logo.png")} />
+        <View style={{ alignItems: "center" }}>
+          <Image source={require("../assets/images/logo.png")} />
         </View>
         <Button style={styles.button} onPress={Actions.main}>
           <Text style={styles.normal}>Enter the Allotment Lab</Text>
@@ -56,10 +54,6 @@ export default class Splash extends Component {
   }
 
   async _cacheResourcesAsync() {
-    await Font.loadAsync({
-      "aria-madurai": require("./assets/fonts/ArimaMadurai-Regular.ttf")
-    });
-
-    this.setState({isReady: true});
+    this.setState({ isReady: true });
   }
 }

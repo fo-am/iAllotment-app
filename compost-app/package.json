@@ -1,27 +1,27 @@
 {
   "name": "AllotmentLab",
-  "version": "0.1.1",
-  "devDependencies": {
-    "react-native-scripts": "1.0.0",
-    "jest-expo": "~19.0.0",
-    "react-test-renderer": "16.0.0-alpha.12"
-  },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "start": "react-native-scripts start",
-    "eject": "react-native-scripts eject",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios",
-    "test": "node node_modules/jest/bin/jest.js --watch"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
   },
-  "jest": {
-    "preset": "jest-expo"
+  "rnpm": {
+    "assets": ["assets/fonts"]
   },
   "dependencies": {
-    "expo": "^19.0.0",
     "react": "16.0.0-alpha.12",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-19.0.0.tar.gz",
+    "react-native": "0.47.1",
     "react-native-router-flux": "^3.39.1",
     "apsl-react-native-button": "^3.0.2"
+  },
+  "devDependencies": {
+    "babel-jest": "20.0.3",
+    "babel-preset-react-native": "2.1.0",
+    "jest": "20.0.4",
+    "react-test-renderer": "16.0.0-alpha.12"
+  },
+  "jest": {
+    "preset": "react-native"
   }
 }

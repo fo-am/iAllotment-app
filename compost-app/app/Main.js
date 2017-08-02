@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import {
   StyleSheet,
   Text,
@@ -9,25 +9,25 @@ import {
 } from "react-native";
 import Button from "apsl-react-native-button";
 import resolveAssetSource from "resolveAssetSource";
-import {Actions} from "react-native-router-flux";
+import { Actions } from "react-native-router-flux";
 import styles from "./Styles";
 import ImageScale from "./ImageScale";
 
 export default class Main extends Component {
   render() {
     this.props.soilType
-      ? (this.state = {soilType: this.props.soilType})
-      : (this.state = {soilType: "Find soil texture"});
+      ? (this.state = { soilType: this.props.soilType })
+      : (this.state = { soilType: "Find soil texture" });
     return (
       <ScrollView style={styles.background}>
         <Text style={styles.header}>Becky's allotment</Text>
-        <ImageScale image={require("./assets/images/map.png")} />
+        <ImageScale image={require("../assets/images/map.png")} />
         <View>
           <View style={styles.row}>
             <View>
               <Text style={styles.normal}>Soil Texture</Text>
               <Button
-                style={{backgroundColor: "rgb(224, 190, 54)"}}
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
                 onPress={Actions.soilTexture}
               >
                 <Text style={styles.normal}>
@@ -50,7 +50,7 @@ export default class Main extends Component {
             <View>
               <Text style={styles.normal}>Choose Units</Text>
               <Button
-                style={{backgroundColor: "rgb(224, 190, 54)"}}
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
                 onPress={Actions.main}
                 isDisabled={true}
               >
@@ -61,7 +61,7 @@ export default class Main extends Component {
               <Text style={styles.normal}>Rainfall</Text>
 
               <Button
-                style={{backgroundColor: "rgb(224, 190, 54)"}}
+                style={{ backgroundColor: "rgb(224, 190, 54)" }}
                 onPress={Actions.main}
                 isDisabled={true}
               >
