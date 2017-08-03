@@ -30,11 +30,8 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
 lane :beta do 
-  #  cocoapods(
-  #    podfile:'../ios/'
-  #  )
     buildNumber = latest_testflight_build_number(
-        app_identifier: "com.foam.allotmentlab"
+        app_identifier: "fo.am.allotmentlab"
       ) + 1
      increment_build_number({
       build_number: buildNumber,
@@ -48,7 +45,7 @@ lane :beta do
     update_app_identifier(
       xcodeproj: '../ios/allotmentlab.xcodeproj',
       plist_path:'./allotmentlab/Info.plist',
-      app_identifier: "com.foam.allotmentlab"
+      app_identifier: "fo.am.allotmentlab"
     )  
     cert
     sigh

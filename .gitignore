@@ -40,7 +40,8 @@ gradle-app.setting
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -210,3 +211,7 @@ buck-out/
 .fakebuckversion
 
 # End of https://www.gitignore.io/api/reactnative
+AllotmentLab.app.dSYM.zip
+*.mobileprovision
+*.cer
+report.xml
