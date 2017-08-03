@@ -30,9 +30,9 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
 lane :beta do 
-    cocoapods(
-      podfile:'../ios/'
-    )
+  #  cocoapods(
+  #    podfile:'../ios/'
+  #  )
     buildNumber = latest_testflight_build_number(
         app_identifier: "com.foam.allotmentlab"
       ) + 1
@@ -41,21 +41,21 @@ lane :beta do
       xcodeproj: '../ios/allotmentlab.xcodeproj'
     }) 
     set_info_plist_value(
-      path: "../ios/allotmentlab/Supporting/Info.plist", 
+      path: "../ios/allotmentlab/Info.plist", 
       key: "CFBundleVersion", 
       value: buildNumber.to_s
       )
     update_app_identifier(
       xcodeproj: '../ios/allotmentlab.xcodeproj',
-      plist_path:'./allotmentlab/Supporting/Info.plist',
+      plist_path:'./allotmentlab/Info.plist',
       app_identifier: "com.foam.allotmentlab"
     )  
     cert
     sigh
     pem
     gym( 
-      scheme: "allotmentlab",
-      workspace: '../ios/allotmentlab.xcworkspace'
+      scheme: "AllotmentLab",
+      project: '../ios/allotmentlab.xcodeproj'
       )
     pilot
   end
