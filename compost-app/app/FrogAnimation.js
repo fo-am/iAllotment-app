@@ -14,8 +14,7 @@ export default class FrogAnimation extends React.Component {
       require("../assets/images/forg_t1.png"),
       require("../assets/images/forg_t2.png")
     ];
-    this.images = [];
-
+    this.images = [require("../assets/images/forg_0.png")];
     this.state = { index: 0 };
   }
 
