@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, Image, View } from "react-native";
 import resolveAssetSource from "resolveAssetSource";
-
+var timer1;
+var timer2;
+var timer3;
 export default class FrogAnimation extends React.Component {
   constructor(props) {
     super(props);
@@ -20,15 +22,18 @@ export default class FrogAnimation extends React.Component {
 
   componentDidMount() {
     this.images = this.imagesNormal;
-    setTimeout(() => this.changeToSpice(), 2000);
+    this.timer3 = setTimeout(() => this.changeToSpice(), 2000);
     this.next();
   }
   changeToSpice() {
     this.images = this.imagesSpice;
-    setTimeout(() => this.changeToSpice(), this.randomIntBetween(4000, 10000));
+    this.timer2 = setTimeout(
+      () => this.changeToSpice(),
+      this.randomIntBetween(4000, 10000)
+    );
   }
   next() {
-    setTimeout(() => {
+    this.timer1 = setTimeout(() => {
       this.setState({ index: (this.state.index + 1) % this.images.length });
       if (this.state.index + 1 === this.images.length) {
         this.images = this.imagesNormal;
@@ -60,5 +65,10 @@ export default class FrogAnimation extends React.Component {
         />
       </View>
     );
+  }
+  componentWillUnmount() {
+    clearTimeout(this.timer1);
+    clearTimeout(this.timer2);
+    clearTimeout(this.timer3);
   }
 }

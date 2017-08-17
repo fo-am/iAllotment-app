@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { StyleSheet, Text, Image, View } from "react-native";
 import resolveAssetSource from "resolveAssetSource";
 
+var timer1;
+
 export default class RobinAnimation extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +21,7 @@ export default class RobinAnimation extends React.Component {
   }
 
   next() {
-    setTimeout(() => {
+    this.timer1 = setTimeout(() => {
       this.setState({ index: (this.state.index + 1) % 3 });
       this.next();
     }, this.getTimeout());
@@ -48,5 +50,8 @@ export default class RobinAnimation extends React.Component {
         />
       </View>
     );
+  }
+  componentWillUnmount() {
+    clearTimeout(this.timer1);
   }
 }

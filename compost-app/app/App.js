@@ -1,9 +1,10 @@
-import React, {Component} from "react";
-import {Router, Scene} from "react-native-router-flux";
+import React, { Component } from "react";
+import { Router, Scene } from "react-native-router-flux";
 import Splash from "./Splash";
 import Main from "./Main";
 import SoilTexture from "./SoilTexture";
 import CompostLab from "./CompostLab";
+import CompostTroubleShoot from "./CompostTroubleShoot";
 
 export default class App extends Component {
   render() {
@@ -22,6 +23,12 @@ export default class App extends Component {
             key="compostLab"
             component={CompostLab}
             title="Compost Lab"
+            hideNavBar={false}
+          />
+          <Scene
+            key="CompostTroubleShoot"
+            component={CompostTroubleShoot}
+            title="Compost trouble shooting"
             hideNavBar={false}
           />
         </Scene>

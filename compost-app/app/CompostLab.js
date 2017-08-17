@@ -60,6 +60,50 @@ export default class CompostLab extends Component {
             <FrogAnimation />
           </View>
         </View>
+        <Text style={styles.normal}>Composting tips</Text>
+        <View>
+          <Button
+            style={{ backgroundColor: "rgb(224, 190, 54)" }}
+            onPress={Actions.CompostTroubleShoot}
+          >
+            <Text style={styles.normal}>Compost troubleshooting</Text>
+          </Button>
+          <Button
+            style={{ backgroundColor: "rgb(224, 190, 54)" }}
+            onPress={Actions.main}
+            isDisabled={true}
+          >
+            <Text style={styles.normal}>Types of compost bin</Text>
+          </Button>
+          <Button
+            style={{ backgroundColor: "rgb(224, 190, 54)" }}
+            onPress={Actions.main}
+            isDisabled={true}
+          >
+            <Text style={styles.normal}>What can be composted</Text>
+          </Button>
+          <Button
+            style={{ backgroundColor: "rgb(224, 190, 54)" }}
+            onPress={Actions.main}
+            isDisabled={true}
+          >
+            <Text style={styles.normal}>Compost maintenance</Text>
+          </Button>
+          <Button
+            style={{ backgroundColor: "rgb(224, 190, 54)" }}
+            onPress={Actions.main}
+            isDisabled={true}
+          >
+            <Text style={styles.normal}>Using compost</Text>
+          </Button>
+        </View>
+        <RobinAnimation />
+        <Button
+          style={{ backgroundColor: "rgb(224, 190, 54)" }}
+          onPress={Actions.main}
+        >
+          <Text style={styles.normal}>Back</Text>
+        </Button>
       </ScrollView>
     );
   }

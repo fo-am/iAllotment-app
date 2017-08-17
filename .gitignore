@@ -215,3 +215,6 @@ AllotmentLab.app.dSYM.zip
 *.mobileprovision
 *.cer
 report.xml
+compost-app/.vscode/.react/index.android.map
+compost-app/.vscode/.react/index.android.bundle
+compost-app/.vscode/.react/debuggerWorker.js
