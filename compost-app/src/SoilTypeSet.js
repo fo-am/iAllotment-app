@@ -14,7 +14,7 @@ export default class SoilTypeSet extends React.Component {
         <Button
           style={{ backgroundColor: "rgb(224, 190, 54)" }}
           onPress={() =>
-            Actions.main({ soilType: this.props.soilType, type: "reset" })}
+            Actions.main({ soilType: this.props.soilType, type: "replace" })}
         >
           Done
         </Button>
