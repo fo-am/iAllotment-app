@@ -22,7 +22,10 @@ export default class LeftBin extends Component {
         <Text style={styles.header}>Left bin</Text>
         <View>
           <View>
-            <Button style={{ backgroundColor: "rgb(224, 190, 54)" }}>
+            <Button
+              style={{ backgroundColor: "rgb(224, 190, 54)" }}
+              onPress={Actions.addMaterial}
+            >
               <Text style={styles.normal}>Add to compost</Text>
             </Button>
           </View>

@@ -22,14 +22,17 @@ export default class FrogAnimation extends React.Component {
 
   componentDidMount() {
     this.images = this.imagesNormal;
-    this.timer3 = setTimeout(() => this.changeToSpice(), 2000);
+    this.timer3 = setTimeout(
+      () => this.changeToSpice(),
+      this.randomIntBetween(9000, 15000)
+    );
     this.next();
   }
   changeToSpice() {
     this.images = this.imagesSpice;
     this.timer2 = setTimeout(
       () => this.changeToSpice(),
-      this.randomIntBetween(4000, 10000)
+      this.randomIntBetween(9000, 15000)
     );
   }
   next() {
@@ -44,7 +47,7 @@ export default class FrogAnimation extends React.Component {
 
   getTimeout() {
     if (this.state.index === 0) {
-      return this.randomIntBetween(2000, 4000);
+      return this.randomIntBetween(1000, 4000);
     } else return this.randomIntBetween(100, 150);
   }
 
