@@ -64,7 +64,7 @@ export default class CompostLab extends Component {
         <View>
           <Button
             style={{ backgroundColor: "rgb(224, 190, 54)" }}
-            onPress={Actions.CompostTroubleShoot}
+            onPress={Actions.compostTroubleShoot}
           >
             <Text style={styles.normal}>Compost troubleshooting</Text>
           </Button>
