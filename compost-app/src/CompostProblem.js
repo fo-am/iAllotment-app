@@ -24,7 +24,7 @@ export default class CompostProblem extends React.Component {
         </View>
         <Button
           style={{ backgroundColor: "rgb(224, 190, 54)" }}
-          onPress={() => Actions.main({ type: "reset" })}
+          onPress={() => Actions.compostLab({ type: "reset" })}
         >
           Done
         </Button>
