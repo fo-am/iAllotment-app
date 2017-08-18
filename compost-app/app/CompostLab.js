@@ -33,7 +33,7 @@ export default class CompostLab extends Component {
         <View style={{ marginBottom: 100 }}>
           <Button
             style={{ backgroundColor: "rgb(224, 190, 54)" }}
-            onPress={Actions.main}
+            onPress={Actions.leftBin}
           >
             <Text style={styles.normal}>Left bin</Text>
           </Button>

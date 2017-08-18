@@ -5,6 +5,7 @@ import Main from "./Main";
 import SoilTexture from "./SoilTexture";
 import CompostLab from "./CompostLab";
 import CompostTroubleShoot from "./CompostTroubleShoot";
+import LeftBin from "./LeftBin";
 
 export default class App extends Component {
   render() {
@@ -29,6 +30,12 @@ export default class App extends Component {
             key="CompostTroubleShoot"
             component={CompostTroubleShoot}
             title="Compost trouble shooting"
+            hideNavBar={false}
+          />
+          <Scene
+            key="leftBin"
+            component={LeftBin}
+            title="Left bin"
             hideNavBar={false}
           />
         </Scene>

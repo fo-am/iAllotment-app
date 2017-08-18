@@ -1,6 +1,6 @@
 var React = require("react-native");
 
-import {StyleSheet, Platform} from "react-native";
+import { StyleSheet, Platform } from "react-native";
 
 const styles = StyleSheet.create({
   header: {
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   backgroundWithNav: {
     backgroundColor: "rgb(243, 247, 235)",
-    paddingTop: Platform.OS === "ios" ? 64 : 54
+    marginTop: Platform.OS === "ios" ? 64 : 54
   },
   image: {
     alignSelf: "stretch",
