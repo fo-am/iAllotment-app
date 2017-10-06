@@ -27,11 +27,13 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
   background: {
-    backgroundColor: "rgb(243, 247, 235)"
+    backgroundColor: "rgb(243, 247, 235)",
+    padding: 20
   },
   backgroundWithNav: {
     backgroundColor: "rgb(243, 247, 235)",
-    marginTop: Platform.OS === "ios" ? 64 : 54
+    marginTop: Platform.OS === "ios" ? 64 : 54,
+    padding: 20
   },
   image: {
     alignSelf: "stretch",
