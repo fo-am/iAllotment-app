@@ -21,8 +21,6 @@ export default class CompostTroubleShoot extends Component {
         </Text>
         <View
           style={{
-            borderTopColor: "black",
-            borderTopWidth: StyleSheet.hairlineWidth,
             backgroundColor: "rgb(176, 209, 193)"
           }}
         >
