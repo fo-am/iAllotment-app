@@ -32,7 +32,7 @@ export default class Main extends Component {
                 style={{ backgroundColor: "rgb(224, 190, 54)" }}
                 onPress={Actions.soilTexture}
               >
-                <Text style={styles.normal}>
+                <Text style={styles.normalButton}>
                   {this.state.soilType}
                 </Text>
               </Button>
@@ -44,7 +44,7 @@ export default class Main extends Component {
                 onPress={Actions.main}
                 isDisabled={true}
               >
-                <Text style={styles.normal}>Slightly acid</Text>
+                <Text style={styles.normalButton}>Slightly acid</Text>
               </Button>
             </View>
           </View>
@@ -56,7 +56,7 @@ export default class Main extends Component {
                 onPress={Actions.main}
                 isDisabled={true}
               >
-                <Text style={styles.normal}>Metric</Text>
+                <Text style={styles.normalButton}>Metric</Text>
               </Button>
             </View>
             <View>
@@ -67,7 +67,7 @@ export default class Main extends Component {
                 onPress={Actions.main}
                 isDisabled={true}
               >
-                <Text style={styles.normal}>Low</Text>
+                <Text style={styles.normalButton}>Low</Text>
               </Button>
             </View>
           </View>
@@ -77,7 +77,7 @@ export default class Main extends Component {
             style={{ backgroundColor: "rgb(224, 190, 54)" }}
             onPress={Actions.compostLab}
           >
-            <Text style={styles.normal}>Go to my compost lab</Text>
+            <Text style={styles.normalButton}>Go to my compost lab</Text>
           </Button>
         </View>
         <View>
