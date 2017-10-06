@@ -40,19 +40,19 @@ export default class SoilTexture extends Component {
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "easily"})}
               >
-                Easily
+                <Text style={styles.normal}>Easily</Text>
               </Button>
               <Button
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "withGreatCare"})}
               >
-                With great care
+                <Text style={styles.normal}>With great care</Text>
               </Button>
               <Button
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "sand"})}
               >
-                No
+                <Text style={styles.normal}>No</Text>
               </Button>
             </View>
           )}
@@ -75,13 +75,13 @@ export default class SoilTexture extends Component {
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "easily"})}
               >
-                Flattens coherently
+                <Text style={styles.normal}>Flattens coherently</Text>
               </Button>
               <Button
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "break"})}
               >
-                Breaks up
+                <Text style={styles.normal}>Breaks up</Text>
               </Button>
             </View>
           )}
@@ -104,13 +104,13 @@ export default class SoilTexture extends Component {
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "bend"})}
               >
-                Yes
+                <Text style={styles.normal}>Yes</Text>
               </Button>
               <Button
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "loamySand"})}
               >
-                No
+                <Text style={styles.normal}>No</Text>
               </Button>
             </View>
           )}
@@ -133,13 +133,13 @@ export default class SoilTexture extends Component {
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "ring"})}
               >
-                Yes
+                <Text style={styles.normal}>Yes</Text>
               </Button>
               <Button
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "feelWet"})}
               >
-                No
+                <Text style={styles.normal}>No</Text>
               </Button>
             </View>
           )}
@@ -148,7 +148,7 @@ export default class SoilTexture extends Component {
               <View style={{alignItems: "center"}}>
                 <ImageScale
                   image={require("../assets/images/smoothOrRough.png")}
-                  text="On remodelling with further moisture, what is the general feel of the soil?"
+                  text="On remodeling with further moisture, what is the general feel of the soil?"
                   textStyle={styles.normal}
                 />
               </View>
@@ -156,13 +156,13 @@ export default class SoilTexture extends Component {
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "smooth"})}
               >
-                Smooth and pasty
+                <Text style={styles.normal}>Smooth and pasty</Text>
               </Button>
               <Button
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "rough"})}
               >
-                Rough and abrasive
+                <Text style={styles.normal}>Rough and abrasive</Text>
               </Button>
             </View>
           )}
@@ -191,13 +191,13 @@ export default class SoilTexture extends Component {
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "polish"})}
               >
-                Yes
+                <Text style={styles.normal}>Yes</Text>
               </Button>
               <Button
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "remodel"})}
               >
-                No
+                <Text style={styles.normal}>No</Text>
               </Button>
             </View>
           )}
@@ -214,19 +214,19 @@ export default class SoilTexture extends Component {
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "gritty"})}
               >
-                Very Gritty
+                <Text style={styles.normal}>Very Gritty</Text>
               </Button>
               <Button
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "moderateRough"})}
               >
-                Moderately rough
+                <Text style={styles.normal}>Moderately rough</Text>
               </Button>
               <Button
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "doughy"})}
               >
-                Doughy
+                <Text style={styles.normal}>Doughy</Text>
               </Button>
             </View>
           )}
@@ -261,13 +261,17 @@ export default class SoilTexture extends Component {
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "highPolish"})}
               >
-                Yes, a high polish with few noticable particles
+                <Text style={styles.normal}>
+                  Yes, a high polish with few noticable particles
+                </Text>
               </Button>
               <Button
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "gittyPolish"})}
               >
-                yes, but gritty particles really noticable
+                <Text style={styles.normal}>
+                  yes, but gritty particles really noticable
+                </Text>
               </Button>
             </View>
           )}
@@ -290,13 +294,17 @@ export default class SoilTexture extends Component {
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "strongly"})}
               >
-                Yes, a high polish with few noticable particles
+                <Text style={styles.normal}>
+                  Yes, a high polish with few noticable particles
+                </Text>
               </Button>
               <Button
                 style={{backgroundColor: "rgb(224, 190, 54)"}}
                 onPress={() => this.setState({page: "moderatley"})}
               >
-                yes, but gritty particles really noticable
+                <Text style={styles.normal}>
+                  yes, but gritty particles really noticable
+                </Text>
               </Button>
             </View>
           )}
