@@ -14,7 +14,11 @@ export default class CompostProblem extends React.Component {
             {this.props.Problem}
           </Text>
         </View>
-        <View>
+        <View
+          style={{
+            marginTop: 20
+          }}
+        >
           <Text style={styles.normal}>Suggested solution</Text>
         </View>
         <View style={{ backgroundColor: "rgb(176, 209, 193)" }}>
@@ -23,7 +27,10 @@ export default class CompostProblem extends React.Component {
           </Text>
         </View>
         <Button
-          style={{ backgroundColor: "rgb(224, 190, 54)" }}
+          style={{
+            backgroundColor: "rgb(224, 190, 54)",
+            marginTop: 20
+          }}
           onPress={() => Actions.compostLab({ type: "replace" })}
         >
           Done
