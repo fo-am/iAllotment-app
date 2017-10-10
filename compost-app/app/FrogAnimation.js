@@ -61,8 +61,8 @@ export default class FrogAnimation extends React.Component {
         <Image
           style={{
             alignSelf: "center",
-            height: 120,
-            width: 200
+            height: 100,
+            width: 166.66
           }}
           source={this.images[this.state.index]}
         />

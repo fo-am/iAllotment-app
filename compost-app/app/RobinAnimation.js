@@ -43,8 +43,8 @@ export default class RobinAnimation extends React.Component {
         <Image
           style={{
             alignSelf: "center",
-            height: 200,
-            width: 200
+            height: 120,
+            width: 120
           }}
           source={this.images[this.state.index]}
         />

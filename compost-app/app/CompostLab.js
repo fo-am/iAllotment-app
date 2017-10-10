@@ -61,7 +61,7 @@ export default class CompostLab extends Component {
           </View>
         </View>
         <Text style={styles.normal}>Composting tips</Text>
-        <View>
+        <View style={{ marginBottom: 100 }}>
           <Button
             style={{ backgroundColor: "rgb(224, 190, 54)" }}
             onPress={this.clickCompost}
@@ -96,8 +96,17 @@ export default class CompostLab extends Component {
           >
             <Text style={styles.normal}>Using compost</Text>
           </Button>
+
+          <View
+            style={{
+              position: "absolute",
+              top: 230,
+              left: 250
+            }}
+          >
+            <RobinAnimation />
+          </View>
         </View>
-        <RobinAnimation />
         <Button
           style={{ backgroundColor: "rgb(224, 190, 54)" }}
           onPress={Actions.main}
