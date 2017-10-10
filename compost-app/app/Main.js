@@ -72,7 +72,7 @@ export default class Main extends Component {
             </View>
           </View>
         </View>
-        <View>
+        <View style={{ paddingTop: 20, paddingBottom: 20 }}>
           <Button
             style={{ backgroundColor: "rgb(224, 190, 54)" }}
             onPress={Actions.compostLab}
@@ -102,7 +102,7 @@ export default class Main extends Component {
         <View>
           <RobinAnimation />
         </View>
-        <View>
+        <View style={{ paddingTop: 20 }}>
           <Text style={styles.normal}>Things to do</Text>
         </View>
         <View style={{ backgroundColor: "rgb(176, 209, 193)" }}>
