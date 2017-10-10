@@ -1,0 +1,16 @@
+To run on an android phone navigate to the project folder, then run
+react-native run-android
+
+If you want to run on an emulator then list out emulators 
+
+avdmanager list avd
+
+then 
+
+emulator @<Name of emulator> 
+
+eg
+
+emulator @Nexus_6P_API_23  
+
+to start emulation.
