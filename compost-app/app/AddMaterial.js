@@ -21,8 +21,9 @@ export default class AddMaterial extends Component {
           Use a jam jar or bucket to measure the amount of material added. The
           size doesn't matter as long as the amount is reasonably consistent.
         </Text>
-        <Text style={styles.normal}>Material added</Text>
-
+        <View style={{ marginTop: 20 }}>
+          <Text style={styles.normal}>Material added</Text>
+        </View>
         <Button
           style={{ backgroundColor: "rgb(224, 190, 54)" }}
           onPress={Actions.main}
@@ -44,7 +45,7 @@ export default class AddMaterial extends Component {
         <View style={{ backgroundColor: "rgb(176, 209, 193)" }}>
           <Text style={styles.header}>300</Text>
         </View>
-        <View style={{ marginTop: "2%" }}>
+        <View style={{ marginTop: 20 }}>
           <Button
             style={{ backgroundColor: "rgb(224, 190, 54)" }}
             onPress={Actions.leftBin}
