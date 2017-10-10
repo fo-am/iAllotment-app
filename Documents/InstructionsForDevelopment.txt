@@ -14,3 +14,11 @@ eg
 emulator @Nexus_6P_API_23  
 
 to start emulation.
+
+**To build on a mac
+
+Do Git pull to get everything up to date.
+run 
+fastlane beta
+
+You will have had to monkey around with keys etc in the past... hope that all still works eh?
