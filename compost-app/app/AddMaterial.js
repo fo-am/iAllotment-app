@@ -49,7 +49,7 @@ export default class AddMaterial extends Component {
             style={{ backgroundColor: "rgb(224, 190, 54)" }}
             onPress={Actions.leftBin}
           >
-            <Text style={styles.header}>Save</Text>
+            <Text style={styles.normal}>Save</Text>
           </Button>
         </View>
       </ScrollView>
