@@ -36,7 +36,7 @@ export default class LeftBin extends Component {
               process.
             </Text>
           </View>
-          <View>
+          <View style={{ marginTop: 20 }}>
             <Text style={styles.normal}>
               Current approximate Carbon:Nitrogen ratio of your compost
             </Text>
@@ -44,7 +44,7 @@ export default class LeftBin extends Component {
           <View style={{ backgroundColor: "rgb(176, 209, 193)" }}>
             <Text style={styles.header}>300</Text>
           </View>
-          <View>
+          <View style={{ marginTop: 20 }}>
             <Text style={styles.normal}>
               Approximate Carbon:Nitrogen ratio of your compost once it has
               fully composted
@@ -53,7 +53,7 @@ export default class LeftBin extends Component {
           <View style={{ backgroundColor: "rgb(176, 209, 193)" }}>
             <Text style={styles.header}>100</Text>
           </View>
-          <View>
+          <View style={{ marginTop: 20 }}>
             <Text style={styles.normal}>To improve your compost</Text>
           </View>
           <View style={{ backgroundColor: "rgb(176, 209, 193)" }}>
