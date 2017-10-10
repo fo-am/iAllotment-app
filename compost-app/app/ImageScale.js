@@ -9,7 +9,10 @@ export default class ImageScale extends React.Component {
   }
   render() {
     return (
-      <View onLayout={event => this._measureView(event)}>
+      <View
+        style={{ alignSelf: "stretch" }}
+        onLayout={event => this._measureView(event)}
+      >
         <Text style={this.props.textStyle}>
           {this.props.text}
         </Text>
