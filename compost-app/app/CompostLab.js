@@ -101,7 +101,7 @@ export default class CompostLab extends Component {
             style={{
               position: "absolute",
               top: 230,
-              left: 250
+              left: "65%"
             }}
           >
             <RobinAnimation />
