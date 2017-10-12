@@ -17,8 +17,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontFamily: "ArimaMadurai-Regular",
     fontSize: 20,
-    padding: 20
-  },
+    paddingLeft: "1%",
+    paddingRight: "1%"
+  }, 
   fakeLink: {
     textDecorationLine: "underline",
     color: "rgb(0, 170, 0)",
