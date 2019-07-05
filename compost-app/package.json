@@ -7,18 +7,20 @@
     "test": "jest"
   },
   "rnpm": {
-    "assets": ["assets/fonts"]
+    "assets": [
+      "assets/fonts"
+    ]
   },
   "dependencies": {
+    "apsl-react-native-button": "^3.0.2",
     "react": "16.0.0-alpha.12",
     "react-native": "0.47.1",
-    "react-native-router-flux": "^3.39.1",
-    "apsl-react-native-button": "^3.0.2"
+    "react-native-router-flux": "^3.39.1"
   },
   "devDependencies": {
     "babel-jest": "20.0.3",
     "babel-preset-react-native": "2.1.0",
-    "jest": "20.0.4",
+    "jest": "24.8.0",
     "react-test-renderer": "16.0.0-alpha.12"
   },
   "jest": {
