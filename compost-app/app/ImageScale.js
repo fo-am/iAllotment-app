@@ -1,25 +1,29 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, Image, View } from "react-native";
+import { Dimensions, StyleSheet, Text, Image, View } from "react-native";
 import resolveAssetSource from "resolveAssetSource";
 
 export default class ImageScale extends React.Component {
-  componentWillMount() {
+  constructor(props) {
+    super(props);
+
     let source = resolveAssetSource(this.props.image);
-    this.setState({ ratio: source.height / source.width });
+    ratio = source.height / source.width;
+
+    this.state = { ratio: ratio };
   }
+
   render() {
     return (
       <View
         style={{ alignSelf: "stretch" }}
         onLayout={event => this._measureView(event)}
       >
-        <Text style={this.props.textStyle}>
-          {this.props.text}
-        </Text>
+        <Text style={this.props.textStyle}>{this.props.text}</Text>
         <Image
           style={{
-            width: this.state.width,
-            height: this.state.height * this.state.ratio
+            width: "100%",
+            height: undefined,
+            aspectRatio: 1
           }}
           source={this.props.image}
         />
@@ -28,8 +32,8 @@ export default class ImageScale extends React.Component {
   }
   _measureView(event) {
     this.setState({
-      width: event.nativeEvent.layout.width,
-      height: event.nativeEvent.layout.width
+      width: Dimensions.get("window").width,
+      height: Dimensions.get("window").width
     });
   }
 }
