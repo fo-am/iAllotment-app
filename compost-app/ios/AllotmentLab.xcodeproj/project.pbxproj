@@ -19,6 +19,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* AllotmentLabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AllotmentLabTests.m */; };
 		63CA6FED8643D4F21751C49F /* libPods-AllotmentLabTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDADA3C83CB88105F14A799 /* libPods-AllotmentLabTests.a */; };
 		75A20F034372379C4081D777 /* libPods-AllotmentLab-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B40FC4107E66BD106731A254 /* libPods-AllotmentLab-tvOSTests.a */; };
+		C2A3D94322D2D5B00068EF74 /* ArimaMadurai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A3D94222D2D5AF0068EF74 /* ArimaMadurai-Regular.ttf */; };
 		F4D20EB90AC524AF18024F5F /* libPods-AllotmentLab-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05179CD560924080270FAFE9 /* libPods-AllotmentLab-tvOS.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		B3DE2A23238D2DA26000965E /* Pods-AllotmentLab-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllotmentLab-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllotmentLab-tvOSTests/Pods-AllotmentLab-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		B40FC4107E66BD106731A254 /* libPods-AllotmentLab-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AllotmentLab-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5F83205DF13147312BC489 /* Pods-AllotmentLab-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllotmentLab-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllotmentLab-tvOS/Pods-AllotmentLab-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		C2A3D94222D2D5AF0068EF74 /* ArimaMadurai-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ArimaMadurai-Regular.ttf"; path = "../../assets/fonts/ArimaMadurai-Regular.ttf"; sourceTree = "<group>"; };
 		DD18D81AA687A80EC6EC9DD4 /* Pods-AllotmentLab-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllotmentLab-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllotmentLab-tvOS/Pods-AllotmentLab-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -174,6 +176,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				C2A3D94122D2D54F0068EF74 /* fonts */,
 				13B07FAE1A68108700A75B9A /* AllotmentLab */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* AllotmentLabTests */,
@@ -195,6 +198,14 @@
 				2D02E4901E0B4A5D006451C7 /* AllotmentLab-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C2A3D94122D2D54F0068EF74 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C2A3D94222D2D5AF0068EF74 /* ArimaMadurai-Regular.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +355,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				C2A3D94322D2D5B00068EF74 /* ArimaMadurai-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
