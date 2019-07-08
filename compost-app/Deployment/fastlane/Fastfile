@@ -1,99 +1,47 @@
-# Customise this file, documentation can be found here:
-# https://github.com/fastlane/fastlane/tree/master/fastlane/docs
-# All available actions: https://docs.fastlane.tools/actions
-# can also be listed using the `fastlane actions` command
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
 
-# Change the syntax highlighting to Ruby
-# All lines starting with a # are ignored when running `fastlane`
+# Uncomment the line if you want fastlane to automatically update itself
+ update_fastlane
 
-# If you want to automatically update fastlane if a new version is available:
-# update_fastlane
-
-# This is the minimum version number required.
-# Update this, if you use features of a newer version
-fastlane_version "2.48.0"
-
-default_platform :ios
+default_platform(:ios)
 
 platform :ios do
-  before_all do
-    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
-    
-    
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "180"
+    ENV["FASTLANE_XCODE_LIST_TIMEOUT"] = "180"
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"] = "10"
+    clean
+    images
+    get_certificates
+    get_provisioning_profile
+    increment_build_number(xcodeproj: "../ios/AllotmentLab.xcodeproj")
+    build_app(workspace: "../ios/AllotmentLab.xcworkspace", scheme: "AllotmentLab")
+    upload_to_testflight
   end
-
-  desc "Runs all the tests"
-  lane :test do
-    scan
+  lane :clean do
+  clear_derived_data
   end
-
-  desc "Submit a new Beta Build to Apple TestFlight"
-  desc "This will also make sure the profile is up to date"
-lane :beta do 
-    buildNumber = latest_testflight_build_number(
-        app_identifier: "fo.am.allotmentlab"
-      ) + 1
-     increment_build_number({
-      build_number: buildNumber,
-      xcodeproj: '../ios/allotmentlab.xcodeproj'
-    }) 
-    set_info_plist_value(
-      path: "../ios/allotmentlab/Info.plist", 
-      key: "CFBundleVersion", 
-      value: buildNumber.to_s
-      )
-    update_app_identifier(
-      xcodeproj: '../ios/allotmentlab.xcodeproj',
-      plist_path:'./allotmentlab/Info.plist',
-      app_identifier: "fo.am.allotmentlab"
-    )  
-    cert
-    sigh
-    pem
-    gym( 
-      scheme: "AllotmentLab",
-      project: '../ios/allotmentlab.xcodeproj'
-      )
-    pilot
+  lane :images do
+   appicon(appicon_image_file: '../assets/images/appstoreIcon.png',
+    appicon_devices: [:ipad, :iphone, :ios_marketing],
+     appicon_path: '../ios/AllotmentLab/Images.xcassets' )
   end
+  lane :deploy do
+   produce(
+    app_name: 'AllotmentLab'
+  )
 
-  desc "Deploy a new version to the App Store"
-  lane :release do
-    # match(type: "appstore")
-    # snapshot
-    gym # Build your app - more options available
-    deliver(force: true)
-    # frameit
-  end
-
-  desc "Take screenshots"
-  lane:sceenshot do
-    snapshot
-    frameit
-
-  end
-
-  # You can define as many lanes as you want
-
-  after_all do |lane|
-    # This block is called, only if the executed lane was successful
-
-    # slack(
-    #   message: "Successfully deployed new App Update."
-    # )
-  end
-
-  error do |lane, exception|
-    # slack(
-    #   message: exception.message,
-    #   success: false
-    # )
+  deliver(force: true)
   end
 end
-
-
-# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
-# All available actions: https://docs.fastlane.tools/actions
-
-# fastlane reports which actions are used. No personal data is recorded. 
-# Learn more at https://github.com/fastlane/fastlane#metrics
